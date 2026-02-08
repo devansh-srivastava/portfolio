@@ -195,22 +195,6 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle }) => {
         {/* Main summary line visible in collapsed state */}
         <p className={styles.description}>{experience.description}</p>
 
-        <div className={styles.expandPreview}>
-          <h4 className={styles.highlightsTitle}>Key Contributions</h4>
-          {!isExpanded && <div className={styles.previewFade} />}
-          <button
-            id={buttonId}
-            type="button"
-            className={styles.expandArrowButton}
-            aria-expanded={isExpanded}
-            aria-controls={panelId}
-            aria-label={`${isExpanded ? 'Collapse' : 'Expand'} key contributions for ${experience.role}`}
-            onClick={() => onToggle(experience.id)}
-          >
-            <ChevronDown size={20} className={isExpanded ? styles.chevronOpen : styles.chevron} />
-          </button>
-        </div>
-
         <AnimatePresence initial={false}>
           {isExpanded && (
             <motion.div
@@ -223,6 +207,7 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle }) => {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25, ease: 'easeInOut' }}
             >
+              <h4 className={styles.highlightsTitle}>Key Contributions</h4>
               {/* Show top 3 contributions to keep the section concise and scannable */}
               <div className={styles.highlights}>
                 <ul className={styles.highlightsList}>
@@ -251,6 +236,18 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle }) => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        <button
+          id={buttonId}
+          type="button"
+          className={styles.expandArrowButton}
+          aria-expanded={isExpanded}
+          aria-controls={panelId}
+          aria-label={`${isExpanded ? 'Collapse' : 'Expand'} key contributions for ${experience.role}`}
+          onClick={() => onToggle(experience.id)}
+        >
+          <ChevronDown size={20} className={isExpanded ? styles.chevronOpen : styles.chevron} />
+        </button>
       </div>
     </article>
   );
