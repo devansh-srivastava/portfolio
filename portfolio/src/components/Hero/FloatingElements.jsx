@@ -12,7 +12,8 @@
  * @component
  */
 
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useRef } from 'react';
 import { 
   Figma, 
   FileCode2, 
@@ -21,7 +22,9 @@ import {
   Palette, 
   LayoutGrid,
   Braces,
-  Bot
+  Bot,
+  Target,
+  Briefcase
 } from 'lucide-react';
 import styles from './FloatingElements.module.css';
 
@@ -32,13 +35,37 @@ import styles from './FloatingElements.module.css';
  */
 const FloatingElement = ({ element }) => {
   const Icon = element.icon;
+  const elementRef = useRef(null);
+  const hoverX = useMotionValue(0);
+  const hoverY = useMotionValue(0);
+  const springX = useSpring(hoverX, { stiffness: 260, damping: 16, mass: 0.5 });
+  const springY = useSpring(hoverY, { stiffness: 260, damping: 16, mass: 0.5 });
+
+  const handleMouseMove = (event) => {
+    const rect = elementRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const dx = event.clientX - centerX;
+    const dy = event.clientY - centerY;
+    const maxShift = 50;
+    const distance = Math.min(Math.hypot(dx, dy), 120) / 120;
+    const repelX = (-dx / (Math.hypot(dx, dy) || 1)) * maxShift * distance;
+    const repelY = (-dy / (Math.hypot(dx, dy) || 1)) * maxShift * distance;
+    hoverX.set(repelX);
+    hoverY.set(repelY);
+  };
+
+  const handleMouseLeave = () => {
+    hoverX.set(0);
+    hoverY.set(0);
+  };
 
   return (
     <motion.div
-      className={styles.floatingElement}
+      className={styles.floatingElementWrapper}
       style={{
         ...element.position,
-        backgroundColor: element.color,
       }}
       // Entry animation with delayed appearance
       initial={{ opacity: 0, scale: 0 }}
@@ -55,11 +82,23 @@ const FloatingElement = ({ element }) => {
         rotate: { delay: element.delay, duration: element.duration * 1.5, repeat: Infinity, ease: "easeInOut" },
       }}
     >
-      {/* Content with icon and label */}
-      <div className={styles.innerContent}>
-        <Icon size={20} className={styles.icon} />
-        <span className={styles.label}>{element.label}</span>
-      </div>
+      <motion.div
+        ref={elementRef}
+        className={styles.floatingElement}
+        style={{
+          backgroundColor: element.color,
+          x: springX,
+          y: springY,
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Content with icon and label */}
+        <div className={styles.innerContent}>
+          <Icon size={20} className={styles.icon} />
+          <span className={styles.label}>{element.label}</span>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -86,7 +125,7 @@ const FloatingElements = () => {
       id: 2, 
       icon: FileCode2, 
       label: 'React', 
-      color: '#E5F5F0',
+      color: '#FFE5E5',
       position: { top: '25%', right: '12%' },
       delay: 0.5,
       duration: 6
@@ -95,7 +134,7 @@ const FloatingElements = () => {
       id: 3, 
       icon: Layers, 
       label: 'PRD', 
-      color: '#FFE5E5',
+      color: '#FFF9E6',
       position: { top: '60%', left: '5%' },
       delay: 1,
       duration: 4.5
@@ -104,8 +143,8 @@ const FloatingElements = () => {
       id: 4, 
       icon: Cpu, 
       label: 'AI Agents', 
-      color: '#FFF9E6',
-      position: { top: '70%', right: '8%' },
+      color: '#E8E5FF',
+      position: { top: '62%', right: '14%' },
       delay: 1.5,
       duration: 5.5
     },
@@ -122,7 +161,7 @@ const FloatingElements = () => {
       id: 6, 
       icon: LayoutGrid, 
       label: 'Wireframes', 
-      color: '#E5F5F0',
+      color: '#FFF9E6',
       position: { top: '45%', right: '5%' },
       delay: 1.2,
       duration: 5
@@ -131,7 +170,7 @@ const FloatingElements = () => {
       id: 7, 
       icon: Braces, 
       label: 'TypeScript', 
-      color: '#FFE5E5',
+      color: '#E5F5F0',
       position: { bottom: '20%', left: '10%' },
       delay: 0.3,
       duration: 5.8
@@ -140,10 +179,28 @@ const FloatingElements = () => {
       id: 8, 
       icon: Bot, 
       label: 'OpenAI', 
-      color: '#FFF9E6',
-      position: { bottom: '25%', right: '15%' },
+      color: '#FFE5E5',
+      position: { bottom: '30%', right: '2%' },
       delay: 0.7,
       duration: 4.8
+    },
+    { 
+      id: 9, 
+      icon: Target, 
+      label: 'Product Thinking', 
+      color: '#E8E5FF',
+      position: { top: '12%', right: '8%' },
+      delay: 0.9,
+      duration: 5.2
+    },
+    { 
+      id: 10, 
+      icon: Briefcase, 
+      label: 'Angular', 
+      color: '#E5F5F0',
+      position: { top: '30%', left: '12%' },
+      delay: 1.1,
+      duration: 5.6
     },
   ];
 
