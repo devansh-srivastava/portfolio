@@ -38,12 +38,12 @@ const Experience = () => {
       period: "April 2025 - Present",
       color: "#E8E5FF",
       accentColor: "#7C6AEF",
-      description: "Leading frontend enhancements for a major insurance agent portal serving 17 U.S. states.",
+      description: "Frontend development for a multi-state insurance enrollment portal.",
       highlights: [
-        "Analyzing business requirements and regulatory updates for multi-state compliance",
-        "Cross-functional stakeholder coordination with design, backend, and QA teams",
-        "Redesigned unified search interface improving agent workflow efficiency",
-        "Driving UI/UX improvements based on user feedback and analytics"
+        "Worked on frontend for an internal insurance enrollment portal across 17 U.S. states",
+        "Implemented and maintained state-specific enrollment forms by translating PDF forms into structured, validated UI flows",
+        "Contributed to unified search and workflow improvements, simplifying agent navigation across complex enrollment scenarios",
+        "Supported platform stability through Angular upgrades, security checks, documentation, and close coordination with QA, backend, and analysts"
       ],
       skills: ["Angular", "TypeScript", "Figma", "JIRA", "Agile"],
       impact: "17 U.S. States Impacted"
@@ -56,12 +56,12 @@ const Experience = () => {
       period: "Aug 2023 - Mar 2025",
       color: "#E5F5F0",
       accentColor: "#4ECDC4",
-      description: "Built responsive UI modules for healthcare enrollment platforms with focus on user experience.",
+      description: "Built core workflow features for an internal insurance enrollment platform.",
       highlights: [
-        "Delivered Compare Feature for side-by-side enrollment plan review",
-        "Managed multi-state configuration for regulatory compliance",
-        "Coordinated cross-team efforts with analysts, QA, and backend developers",
-        "Developed reusable component library reducing development time by 30%"
+        "Built core workflow features for an internal insurance enrollment platform",
+        "Built a Compare Feature for side-by-side enrollment validation, reducing manual review errors for agents",
+        "Worked on configurable UI modules and state-specific logic during open enrollment under tight deadlines",
+        "Improved code quality and reliability through vulnerability fixes, data sanitization, documentation, and cross-team coordination"
       ],
       skills: ["Angular", "TypeScript", "Jasmine", "Karma", "CSS"],
       impact: "1.5+ Years Healthcare Tech"
@@ -74,12 +74,12 @@ const Experience = () => {
       period: "Jul 2021 - Dec 2021",
       color: "#FFE5E5",
       accentColor: "#FF6B9D",
-      description: "Built internal tools for an EdTech startup, gaining full-stack development experience.",
+      description: "Contributed to internal tools and CRM platform development.",
       highlights: [
-        "Developed automated certificate generation system for student achievements",
-        "Built Excel upload functionality with AWS RDS integration for lead management",
-        "Created CRM dashboard for tracking student enrollments and progress",
-        "Implemented Laravel-based backend with MySQL database"
+        "Contributed to internal tools and a CRM platform",
+        "Identified gaps in existing workflows and proposed feature-level improvements",
+        "Built and enhanced features for an internal CRM platform, including certificate generation and Excel-based data upload",
+        "Worked end-to-end on features, from idea discussion to implementation, in close collaboration with the team"
       ],
       skills: ["Laravel", "PHP", "MySQL", "AWS", "Bootstrap"],
       impact: "First Tech Role"

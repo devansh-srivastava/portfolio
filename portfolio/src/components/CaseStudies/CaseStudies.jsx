@@ -39,86 +39,86 @@ const CaseStudies = () => {
       icon: FolderOpen,
       color: "#E6F4FF",
       accentColor: "#2E86AB",
-      description: "An AI file assistant on WhatsApp that stores, tags, transcribes, and retrieves files through natural conversation.",
+      description: "WhatsApp-based file assistant that lets people store files, ask questions about them, and retrieve documents from anywhere.",
       role: "Product Manager & Builder",
       metrics: [
         { label: "Entry Point", value: "WhatsApp" },
-        { label: "Max File Size", value: "50 MB" },
-        { label: "Core Value", value: "Zero-UI Filing" }
+        { label: "Core Value", value: "Zero-UI Filing" },
+        { label: "Agent Stack", value: "OpenAI Agents" }
       ],
       highlights: [
-        "Defined end-to-end PRD with user flows, architecture, and tooling",
-        "Prioritized duplicate detection, OCR/transcription, and semantic retrieval",
-        "Designed async metadata pipeline to return fast confirmations",
-        "Specified voice-note flow with Hindi transcription and translation"
+        "Designed an easy, conversational flow for saving and retrieving files",
+        "Enabled question-answering on stored documents for quick answers",
+        "Added voice transcription and automatic summaries for fast capture",
+        "Built on OpenAI agents to keep the experience simple and reliable"
       ],
-      insight: "Great products reduce behavior change by fitting into tools users already use daily."
+      insight: "Frictionless capture and retrieval drives repeat usage."
     },
     {
       id: 2,
-      title: "Tapsy Mobile App",
-      category: "Product",
+      title: "Tapsy",
+      category: "Mobile App",
       icon: Smartphone,
       color: "#E8E5FF",
       accentColor: "#7C6AEF",
-      description: "A mobile app built from concept to MVP, focusing on user experience and iterative development.",
+      description: "Social drinking game app syncing with show audio. Full product ownership from ideation to MVP launch.",
       role: "Product Owner & Developer",
       metrics: [
-        { label: "MVP Shipped", value: "✓" },
-        { label: "Tech Stack", value: "React Native" },
-        { label: "Design Tool", value: "Figma" }
+        { label: "Platform", value: "Mobile" },
+        { label: "Tech Stack", value: "React Native + Firebase" },
+        { label: "Stage", value: "MVP Shipped" }
       ],
       highlights: [
-        "Led product conceptualization and feature definition",
-        "Designed user flows and wireframes in Figma",
-        "Built and shipped MVP with React Native + Firebase",
-        "Iterated based on user feedback"
+        "Owned product from ideation to MVP release",
+        "Designed the core game loop and in-app experience",
+        "Built the app with React Native and Firebase",
+        "Validated the concept through early user feedback"
       ],
-      insight: "First-hand experience of the full product lifecycle from idea to launch."
+      insight: "Shipping a focused MVP beats overbuilding in early-stage products."
     },
     {
       id: 3,
-      title: "Food Delivery App Analysis",
-      category: "Case Study",
+      title: "Food Delivery Analysis",
+      category: "Product Teardown",
       icon: UtensilsCrossed,
       color: "#FFE5E5",
       accentColor: "#FF6B9D",
-      description: "Deep-dive analysis into user retention challenges with a proposed loyalty-gamification solution.",
+      description: "Retention strategy analysis proposing a loyalty-gamification system to increase repeat orders.",
       role: "Product Analyst",
       metrics: [
         { label: "Focus Area", value: "Retention" },
-        { label: "Solution Type", value: "Gamification" },
-        { label: "Business Impact", value: "High" }
+        { label: "Mechanic", value: "Streaks + Achievements" },
+        { label: "Goal", value: "Repeat Orders" }
       ],
       highlights: [
-        "Identified key drop-off points in user journey",
-        "Researched competitor loyalty programs",
-        "Designed gamification-based loyalty system",
-        "Projected retention improvement strategies"
+        "Mapped drop-offs across key ordering moments",
+        "Benchmarked loyalty tactics and market patterns",
+        "Designed streak-based rewards and tiered perks",
+        "Outlined an experimentation plan for uplift validation"
       ],
-      insight: "Understanding that features must drive measurable business outcomes."
+      insight: "Retention improves when progress feels visible and rewarding."
     },
     {
       id: 4,
-      title: "Dating App Case Study",
-      category: "Case Study",
+      title: "Dating App Concept",
+      category: "Product Teardown",
       icon: Heart,
       color: "#E5F5F0",
       accentColor: "#4ECDC4",
-      description: "Identified user-intent mismatch causing high churn and proposed intent-based onboarding solution.",
+      description: "Designed intent-based onboarding to reduce user-intent mismatch and improve match quality.",
       role: "UX Researcher",
       metrics: [
-        { label: "Problem", value: "High Churn" },
-        { label: "Root Cause", value: "Intent Mismatch" },
-        { label: "Solution", value: "Smart Onboarding" }
+        { label: "Problem", value: "Intent Mismatch" },
+        { label: "Fix", value: "Goal Segmentation" },
+        { label: "Outcome", value: "Higher Match Quality" }
       ],
       highlights: [
-        "Analyzed user behavior patterns and churn data",
-        "Discovered mismatch between user intent and app experience",
-        "Designed intent-based onboarding flow",
-        "Proposed personalization framework to reduce churn"
+        "Diagnosed intent mismatch across onboarding and discovery",
+        "Proposed upfront relationship-goal selection",
+        "Designed intent-aware matching and filters",
+        "Defined success metrics for post-onboarding quality"
       ],
-      insight: "Solving the right problem matters more than building features."
+      insight: "Clear intent alignment reduces churn more than surface-level tweaks."
     }
   ];
 
@@ -255,28 +255,9 @@ const CaseStudies = () => {
         })}
       </motion.div>
 
-      {/* Bottom CTA */}
-      <motion.div 
-        className={styles.bottomCta}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className={styles.ctaText}>
-          Want to see more detailed case studies with full PRDs?
-        </p>
-        <motion.button 
-          className={styles.ctaButton}
-          whileHover={{ scale: 1.02, y: -2 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <span>Get in Touch</span>
-          <TrendingUp size={18} />
-        </motion.button>
-      </motion.div>
     </section>
   );
 };
 
 export default CaseStudies;
+
