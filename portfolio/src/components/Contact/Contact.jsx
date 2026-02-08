@@ -16,7 +16,7 @@ import {
   Mail, 
   Linkedin, 
   Github, 
-  Twitter, 
+  Phone, 
   Sparkles,
   Heart,
   ArrowUpRight
@@ -30,25 +30,25 @@ const Contact = () => {
     { 
       name: 'LinkedIn', 
       icon: Linkedin, 
-      url: 'https://linkedin.com/in/devanshsrivastava',
+      url: 'https://www.linkedin.com/in/devansh-sri/',
       color: '#E8E5FF'
     },
     { 
       name: 'GitHub', 
       icon: Github, 
-      url: 'https://github.com/devanshsrivastava',
+      url: 'https://github.com/devansh-srivastava',
       color: '#E5F5F0'
     },
     { 
-      name: 'Twitter', 
-      icon: Twitter, 
-      url: 'https://twitter.com/devanshsriv',
+      name: 'Phone', 
+      icon: Phone, 
+      url: 'tel:+917838006151',
       color: '#FFE5E5'
     },
     { 
       name: 'Email', 
       icon: Mail, 
-      url: 'mailto:devansh@example.com',
+      url: 'https://mail.google.com/mail/?view=cm&fs=1&to=devansh.srivastava2@gmail.com',
       color: '#FFF9E6'
     },
   ];
@@ -128,7 +128,7 @@ const Contact = () => {
               </p>
 
               <motion.a 
-                href="mailto:devansh@example.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=devansh.srivastava2@gmail.com"
                 className={styles.emailButton}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}

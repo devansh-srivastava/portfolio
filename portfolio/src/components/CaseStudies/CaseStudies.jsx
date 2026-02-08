@@ -41,6 +41,7 @@ const CaseStudies = () => {
       accentColor: "#2E86AB",
       description: "WhatsApp-based file assistant that lets people store files, ask questions about them, and retrieve documents from anywhere.",
       role: "Product Manager & Builder",
+      url: "https://devansh-srivastava.github.io/Merifile-Website/",
       metrics: [
         { label: "Entry Point", value: "WhatsApp" },
         { label: "Core Value", value: "Zero-UI Filing" },
@@ -63,6 +64,7 @@ const CaseStudies = () => {
       accentColor: "#7C6AEF",
       description: "Social drinking game app syncing with show audio. Full product ownership from ideation to MVP launch.",
       role: "Product Owner & Developer",
+      url: "https://www.notion.so/Case-Study-Tapsy-Social-Drinking-Game-2bd61277ccc880348b83fee17fd6f8d3?source=copy_link",
       metrics: [
         { label: "Platform", value: "Mobile" },
         { label: "Tech Stack", value: "React Native + Firebase" },
@@ -85,6 +87,7 @@ const CaseStudies = () => {
       accentColor: "#FF6B9D",
       description: "Retention strategy analysis proposing a loyalty-gamification system to increase repeat orders.",
       role: "Product Analyst",
+      url: "https://www.notion.so/Case-Study-Yearly-Wraps-and-Dietary-Filters-in-Food-Delivery-Apps-2a561277ccc880c99aaad3d66a4a8e57?source=copy_link",
       metrics: [
         { label: "Focus Area", value: "Retention" },
         { label: "Mechanic", value: "Streaks + Achievements" },
@@ -107,6 +110,7 @@ const CaseStudies = () => {
       accentColor: "#4ECDC4",
       description: "Designed intent-based onboarding to reduce user-intent mismatch and improve match quality.",
       role: "UX Researcher",
+      url: "https://www.notion.so/Case-Study-Aligning-Intentions-Accelerating-Replies-in-Dating-Apps-22161277ccc88091a9d2da01efe5390c?source=copy_link",
       metrics: [
         { label: "Problem", value: "Intent Mismatch" },
         { label: "Fix", value: "Goal Segmentation" },
@@ -190,13 +194,21 @@ const CaseStudies = () => {
       >
         {caseStudies.map((study) => {
           const Icon = study.icon;
+          const CardComponent = study.url ? motion.a : motion.article;
           return (
-            <motion.article
+            <CardComponent
               key={study.id}
               className={styles.card}
               style={{ '--card-color': study.color, '--accent': study.accentColor }}
               variants={cardVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              {...(study.url
+                ? {
+                    href: study.url,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  }
+                : {})}
             >
               {/* Card Header */}
               <div className={styles.cardHeader}>
@@ -250,7 +262,7 @@ const CaseStudies = () => {
               >
                 <ArrowUpRight size={24} />
               </motion.div>
-            </motion.article>
+            </CardComponent>
           );
         })}
       </motion.div>

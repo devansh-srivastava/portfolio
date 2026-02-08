@@ -71,6 +71,8 @@
   box-shadow: 5px 5px 0px var(--text-primary);
   transition: all var(--transition-fast);
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card::before {

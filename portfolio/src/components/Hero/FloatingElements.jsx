@@ -65,6 +65,7 @@ const FloatingElement = ({ element }) => {
     <motion.div
       className={styles.floatingElementWrapper}
       style={{
+        position: 'absolute',
         ...element.position,
       }}
       // Entry animation with delayed appearance
