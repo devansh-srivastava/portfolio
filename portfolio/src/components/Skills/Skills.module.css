@@ -1,0 +1,218 @@
+/* ============================================
+   SKILLS SECTION - Product & Technical Skills
+   ============================================ */
+
+.skills {
+  min-height: 100vh;
+  padding: var(--space-4xl) var(--space-xl);
+  position: relative;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+/* Background Decoration */
+.bgDecoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgCircle1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  right: -100px;
+  background: radial-gradient(circle, var(--lavender) 0%, transparent 70%);
+  opacity: 0.5;
+}
+
+.bgCircle2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, var(--mint) 0%, transparent 70%);
+  opacity: 0.5;
+}
+
+/* Section Header */
+.header {
+  max-width: 800px;
+  margin: 0 auto var(--space-4xl);
+  text-align: center;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--butter-yellow);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-brutal-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5.4vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  font-stretch: normal;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+/* Content Grid */
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Skills Section Header */
+.skillsSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.skillsIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lavender);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.skillsTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.skillsSubtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* PM Skills Grid */
+.pmSkillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.pmSkillCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-brutal-sm);
+  cursor: default;
+  transition: all var(--transition-fast);
+}
+
+.pmSkillIcon {
+  color: var(--text-primary);
+}
+
+.pmSkillLabel {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* Technical Skills */
+.techSkillsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.techSkillItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.techSkillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.techSkillName {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.techSkillLevel {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.techSkillBar {
+  height: 10px;
+  background: var(--soft-gray);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.techSkillProgress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+  border-radius: var(--radius-full);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: var(--space-3xl) var(--space-md);
+  }
+
+  .pmSkillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pmSkillsGrid {
+    grid-template-columns: 1fr;
+  }
+}

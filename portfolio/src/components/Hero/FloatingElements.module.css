@@ -1,0 +1,65 @@
+/* ============================================
+   FLOATING ELEMENTS - Decorative UI Elements
+   ============================================ */
+
+.floatingContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.floatingElement {
+  position: absolute;
+  padding: 10px 16px;
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  box-shadow: 3px 3px 0px var(--text-primary);
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.innerContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.floatingDot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Hide floating elements on smaller screens */
+@media (max-width: 1024px) {
+  .floatingElement {
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+
+  .floatingElement:nth-child(n+5) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .floatingContainer {
+    display: none;
+  }
+}
