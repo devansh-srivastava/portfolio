@@ -121,9 +121,9 @@ const Hero = () => {
 
         {/* Subheading */}
         <motion.p variants={itemVariants} className={styles.subheading}>
-          Hey, I'm <span className={styles.name}>Devansh Srivastava</span> - a Business Analyst with 3+ years of experience
-          across enterprise health insurance, frontend engineering, and product delivery. I translate complex requirements into
-          clear product experiences and build AI-powered tools from insight to launch.
+          Hey, I'm <span className={styles.name}>Devansh Srivastava</span>. I turn customer and business problems into clear
+          product decisions, work with engineers to bring ideas to life, and build AI-enabled products and internal tools that
+          improve real workflows.
         </motion.p>
 
         {/* Journey Tags */}
