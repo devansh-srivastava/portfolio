@@ -197,13 +197,13 @@ const Hero = () => {
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>
-            <span className={styles.statNumber}>17</span>
-            <span className={styles.statLabel}>U.S. States Served</span>
+            <span className={styles.statNumber}>10K+</span>
+            <span className={styles.statLabel}>Users Impacted</span>
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>
-            <span className={styles.statNumber}>3+</span>
-            <span className={styles.statLabel}>Product Case Studies</span>
+            <span className={styles.statNumber}>15%</span>
+            <span className={styles.statLabel}>Faster Template Delivery</span>
           </div>
         </motion.div>
       </motion.div>
