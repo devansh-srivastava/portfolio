@@ -27,6 +27,7 @@ import {
   TrendingUp,
   Eye
 } from 'lucide-react';
+import { routes } from '../../lib/routes';
 import styles from './CaseStudies.module.css';
 
 const CaseStudies = () => {
@@ -35,25 +36,25 @@ const CaseStudies = () => {
     {
       id: 1,
       title: "MeriFile",
-      category: "WhatsApp-Based AI Agent",
+      category: "WhatsApp AI Document Assistant",
       icon: FolderOpen,
       color: "#E6F4FF",
       accentColor: "#2E86AB",
-      description: "WhatsApp-based file assistant that lets people store files, ask questions about them, and retrieve documents from anywhere.",
+      description: "A WhatsApp AI bot for saving, organizing, querying, and retrieving personal documents - built end to end and later pivoted toward group use.",
       role: "Product Manager & Builder",
       url: "https://devansh-srivastava.github.io/Merifile-Website/",
       metrics: [
-        { label: "Entry Point", value: "WhatsApp" },
-        { label: "Core Value", value: "Zero-UI Filing" },
-        { label: "Agent Stack", value: "OpenAI Agents" }
+        { label: "Discovery", value: "12+ Interviews" },
+        { label: "Stack", value: "OpenAI Responses API" },
+        { label: "Infrastructure", value: "AWS + Firebase" }
       ],
       highlights: [
-        "Designed an easy, conversational flow for saving and retrieving files",
-        "Enabled question-answering on stored documents for quick answers",
-        "Added voice transcription and automatic summaries for fast capture",
-        "Built on OpenAI agents to keep the experience simple and reliable"
+        "Scoped the MVP and independently built and launched the bot with OpenAI's Responses API, multi-agent orchestration, AWS, and Firebase",
+        "Ran structured post-launch interviews with 12+ users to uncover document-management behaviours, pain points, and unmet needs",
+        "Used qualitative findings to identify stronger value in group contexts and pivoted from a personal bot to a group-based model",
+        "Designed a conversational experience for storing, asking questions about, and retrieving documents"
       ],
-      insight: "Frictionless capture and retrieval drives repeat usage."
+      insight: "Discovery isn't finished at launch - qualitative evidence can reveal the product's higher-retention use case."
     },
     {
       id: 2,
@@ -85,21 +86,22 @@ const CaseStudies = () => {
       icon: UtensilsCrossed,
       color: "#FFE5E5",
       accentColor: "#FF6B9D",
-      description: "Retention strategy analysis proposing a loyalty-gamification system to increase repeat orders.",
+      description: "Interactive concept exploring yearly wraps and dietary filters to improve retention, trust, and ordering confidence.",
       role: "Product Analyst",
-      url: "https://www.notion.so/Case-Study-Yearly-Wraps-and-Dietary-Filters-in-Food-Delivery-Apps-2a561277ccc880c99aaad3d66a4a8e57?source=copy_link",
+      url: routes.foodDeliveryCaseStudy,
+      isInternal: true,
       metrics: [
-        { label: "Focus Area", value: "Retention" },
-        { label: "Mechanic", value: "Streaks + Achievements" },
-        { label: "Goal", value: "Repeat Orders" }
+        { label: "Focus Area", value: "Retention + Trust" },
+        { label: "Concept", value: "Wrap + Filters" },
+        { label: "Goal", value: "More Repeat Orders" }
       ],
       highlights: [
-        "Mapped drop-offs across key ordering moments",
-        "Benchmarked loyalty tactics and market patterns",
-        "Designed streak-based rewards and tiered perks",
-        "Outlined an experimentation plan for uplift validation"
+        "Mapped two user tensions: low emotional stickiness and slow dietary discovery",
+        "Designed a yearly wrap that turns order history into a memorable story",
+        "Added dietary filters to reduce search friction and build meal confidence",
+        "Framed KPI and rollout logic to validate behavior change after launch"
       ],
-      insight: "Retention improves when progress feels visible and rewarding."
+      insight: "Retention grows faster when delight and trust improve together."
     },
     {
       id: 4,
@@ -108,21 +110,22 @@ const CaseStudies = () => {
       icon: Heart,
       color: "#E5F5F0",
       accentColor: "#4ECDC4",
-      description: "Designed intent-based onboarding to reduce user-intent mismatch and improve match quality.",
+      description: "Designed an intent signal system and smart inbox to reduce mismatch, improve reply quality, and make dating apps feel more trustworthy.",
       role: "UX Researcher",
-      url: "https://www.notion.so/Case-Study-Aligning-Intentions-Accelerating-Replies-in-Dating-Apps-22161277ccc88091a9d2da01efe5390c?source=copy_link",
+      url: routes.datingAppCaseStudy,
+      isInternal: true,
       metrics: [
         { label: "Problem", value: "Intent Mismatch" },
-        { label: "Fix", value: "Goal Segmentation" },
+        { label: "Fix", value: "Intent Signal + Smart Inbox" },
         { label: "Outcome", value: "Higher Match Quality" }
       ],
       highlights: [
-        "Diagnosed intent mismatch across onboarding and discovery",
-        "Proposed upfront relationship-goal selection",
-        "Designed intent-aware matching and filters",
-        "Defined success metrics for post-onboarding quality"
+        "Mapped the two main failure modes: intent mismatch and reply latency",
+        "Designed post-match feedback that turns frustration into a useful signal",
+        "Prioritized conversations by effort instead of raw volume",
+        "Defined success metrics for trust, responsiveness, and retention"
       ],
-      insight: "Clear intent alignment reduces churn more than surface-level tweaks."
+      insight: "Clear intent alignment and faster replies reduce churn more than surface-level matching tweaks."
     }
   ];
 
@@ -205,8 +208,12 @@ const CaseStudies = () => {
               {...(study.url
                 ? {
                     href: study.url,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
+                    ...(study.isInternal
+                      ? {}
+                      : {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        }),
                   }
                 : {})}
             >

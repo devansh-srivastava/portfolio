@@ -1,0 +1,1170 @@
+.page {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 229, 229, 0.75), transparent 22%),
+    radial-gradient(circle at 88% 18%, rgba(229, 245, 240, 0.95), transparent 24%),
+    linear-gradient(180deg, #fffef8 0%, #fffdf6 42%, #fffef8 100%);
+  color: var(--text-primary);
+}
+
+.chapter,
+.slideshowSection {
+  position: relative;
+}
+
+.chapter {
+  padding: 0 var(--space-xl);
+}
+
+.chapterInner,
+.slideshowGrid {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.chapterInner {
+  padding: clamp(3.75rem, 6vw, 5rem) 0;
+}
+
+.heroChapter .chapterInner {
+  padding-top: clamp(4rem, 7vw, 5.5rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 26, 46, 0.12);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 14px 32px rgba(26, 26, 46, 0.06);
+  margin-bottom: 2rem;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.backButton:hover {
+  transform: translateY(-1px);
+}
+
+.backButton:active {
+  transform: scale(0.98);
+}
+
+.chapterLabel {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.82rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroTitle,
+.chapterTitle {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.heroTitle {
+  max-width: 11ch;
+  font-size: clamp(3rem, 6.7vw, 5.8rem);
+}
+
+.chapterTitle {
+  max-width: 12ch;
+  font-size: clamp(2.3rem, 4.7vw, 4rem);
+}
+
+.heroSummary,
+.chapterLead {
+  margin-top: 1rem;
+  max-width: 54ch;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.heroHook {
+  max-width: 58ch;
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.heroMeta span {
+  padding: 0.7rem 0.92rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.problemGrid,
+.personaGrid,
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+  margin-top: 2rem;
+}
+
+.metricsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.problemCard,
+.personaCard,
+.metricCard,
+.rolloutCard,
+.storyFrame,
+.railStep,
+.railStepActive,
+.reflectionCard,
+.learningCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: linear-gradient(180deg, var(--card-tint, rgba(246, 244, 255, 0.92)), rgba(255, 255, 255, 0.78));
+  box-shadow: 0 16px 36px rgba(26, 26, 46, 0.05);
+}
+
+.problemCard::before,
+.personaCard::before,
+.metricCard::before,
+.rolloutCard::before,
+.reflectionCard::before,
+.learningCard::before {
+  content: '';
+  position: absolute;
+  inset: 1rem auto 1rem 0;
+  width: 3px;
+  border-radius: 0 999px 999px 0;
+  background: linear-gradient(
+    180deg,
+    var(--card-accent-start, rgba(124, 106, 239, 0.82)),
+    var(--card-accent-end, rgba(106, 196, 255, 0.74))
+  );
+  pointer-events: none;
+}
+
+.problemCard[data-tone='personal'],
+.personaCard[data-tone='personal'],
+.metricCard[data-tone='personal'],
+.reflectionCard[data-tone='personal'],
+.learningCard[data-tone='personal'] {
+  --card-accent-start: rgba(255, 107, 157, 0.86);
+  --card-accent-end: rgba(124, 106, 239, 0.7);
+  --card-tint: rgba(255, 241, 245, 0.95);
+}
+
+.problemCard[data-tone='dietary'],
+.personaCard[data-tone='dietary'],
+.metricCard[data-tone='dietary'],
+.reflectionCard[data-tone='dietary'],
+.learningCard[data-tone='dietary'] {
+  --card-accent-start: rgba(78, 205, 196, 0.86);
+  --card-accent-end: rgba(106, 196, 255, 0.72);
+  --card-tint: rgba(241, 249, 246, 0.98);
+}
+
+.reflectionCard[data-tone='neutral'],
+.learningCard[data-tone='neutral'],
+.rolloutCard {
+  --card-accent-start: rgba(255, 179, 71, 0.82);
+  --card-accent-end: rgba(255, 107, 157, 0.56);
+  --card-tint: rgba(255, 249, 230, 0.94);
+}
+
+.problemCard,
+.personaCard,
+.metricCard {
+  padding: 1.55rem;
+}
+
+.problemCard[data-tone='personal'],
+.personaCard[data-tone='personal'] {
+  background: linear-gradient(180deg, rgba(255, 241, 245, 0.95), rgba(255, 255, 255, 0.78));
+}
+
+.problemCard[data-tone='dietary'],
+.personaCard[data-tone='dietary'] {
+  background: linear-gradient(180deg, rgba(241, 249, 246, 0.98), rgba(255, 255, 255, 0.78));
+}
+
+.problemCard h3,
+.personaCard h3,
+.storyFrame h3 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.12;
+}
+
+.problemCard p,
+.personaCard p,
+.metricCard p,
+.rolloutCard p,
+.storyFrame p,
+.railStep span,
+.railStepActive span {
+  margin-top: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.personaCard span {
+  display: inline-block;
+  margin-top: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.metricCard strong {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  line-height: 0.95;
+  color: var(--accent-purple);
+}
+
+.slideshowSection {
+  min-height: 1500px;
+  height: 252dvh;
+  padding: 0 var(--space-xl);
+}
+
+.slideshowSection + .slideshowSection {
+  margin-top: 6rem;
+}
+
+.slideshowSticky {
+  position: sticky;
+  top: 1rem;
+  height: calc(100dvh - 2rem);
+  display: flex;
+  align-items: center;
+}
+
+.slideshowGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.98fr) minmax(320px, 0.78fr);
+  gap: clamp(1.5rem, 2.4vw, 2.25rem);
+  align-items: center;
+}
+
+.slideshowCopy {
+  min-width: 0;
+}
+
+.storyRail {
+  margin-top: 1.4rem;
+}
+
+.storyFrame {
+  min-height: 208px;
+  padding: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.storyMeta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.railSteps {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.railStep,
+.railStepActive {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  transition:
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.railStep strong,
+.railStepActive strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.18;
+}
+
+.railStepActive {
+  border-color: rgba(124, 106, 239, 0.22);
+  transform: translateY(-1px);
+}
+
+.railStep:active,
+.railStepActive:active {
+  transform: scale(0.98);
+}
+
+.slideshowVisual {
+  min-width: 0;
+}
+
+.phoneStage {
+  position: relative;
+  width: min(100%, 336px);
+  margin: 0 auto;
+}
+
+.phoneGlow {
+  position: absolute;
+  inset: 10% -2% auto;
+  height: 76%;
+  border-radius: 50%;
+  background: rgba(255, 107, 157, 0.2);
+  filter: blur(56px);
+  opacity: 0.75;
+}
+
+.phoneShell {
+  position: relative;
+  padding: 0.85rem;
+  border-radius: 2.35rem;
+  border: 1px solid rgba(26, 26, 46, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 242, 255, 0.82));
+  box-shadow: 0 28px 70px rgba(26, 26, 46, 0.12);
+}
+
+.phoneNotch {
+  width: 34%;
+  height: 1rem;
+  margin: 0 auto 0.75rem;
+  border-radius: 999px;
+  background: rgba(26, 26, 46, 0.92);
+}
+
+.phoneScreen {
+  min-height: 552px;
+  overflow: hidden;
+  border-radius: 1.7rem;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: linear-gradient(180deg, #fffef8 0%, #ffffff 100%);
+}
+
+.mobileScreen {
+  min-height: 494px;
+  padding: 0.9rem;
+}
+
+.mobileStatusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.phonePane {
+  display: grid;
+  min-height: 0;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.phoneEyebrow {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wrapEntryCard,
+.wrapStoryCard,
+.shareCard,
+.filterIntroCard,
+.previewCard,
+.dishCard {
+  border-radius: 1.4rem;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: white;
+  box-shadow: 0 10px 24px rgba(26, 26, 46, 0.04);
+}
+
+.wrapEntryCard,
+.wrapStoryCard,
+.shareCard,
+.filterIntroCard,
+.previewCard,
+.dishCard {
+  padding: 1rem;
+}
+
+.wrapEntryCard h4,
+.wrapStoryCard h4,
+.shareCard h4,
+.filterIntroCard h4 {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.05;
+}
+
+.wrapEntryCard p,
+.shareCard p,
+.filterIntroCard p,
+.dishCard p {
+  margin-top: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.primaryAction {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  background: var(--text-primary);
+  color: white;
+  font-weight: 600;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.primaryAction:active {
+  transform: scale(0.98);
+}
+
+.wrapStoryCard {
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(255, 236, 243, 0.95), white);
+}
+
+.wrapStoryCard strong {
+  display: block;
+  margin-top: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 0.95;
+}
+
+.phoneDots,
+.phoneControls,
+.sharePills,
+.filterRow,
+.filterRow {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.filterRow {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+  scrollbar-width: none;
+}
+
+.filterRow::-webkit-scrollbar {
+  display: none;
+}
+
+.phoneDots {
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+
+.phoneDot,
+.phoneDotActive {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(26, 26, 46, 0.16);
+}
+
+.phoneDotActive {
+  background: var(--accent-pink);
+}
+
+.phoneControls {
+  justify-content: space-between;
+  margin-top: 0.9rem;
+}
+
+.phoneControls button {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.phoneControls button:active {
+  transform: scale(0.97);
+}
+
+.shareHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sharePills span {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 249, 230, 0.92);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+}
+
+.sharePreview,
+.phoneMediaCard {
+  margin-top: 0.95rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(255, 243, 213, 0.88), rgba(255, 255, 255, 0.9));
+}
+
+.sharePreview span,
+.phoneMediaCard span,
+.microMetric span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sharePreview strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.wrapStatStrip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.microMetric {
+  padding: 0.9rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(26, 26, 46, 0.06);
+}
+
+.microMetric strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.mediaBars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 0.4rem;
+  height: 54px;
+  margin-top: 0.8rem;
+}
+
+.mediaBars i {
+  display: block;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 107, 157, 0.35), rgba(124, 106, 239, 0.8));
+}
+
+.mediaBars i:nth-child(1) {
+  height: 42%;
+}
+
+.mediaBars i:nth-child(2) {
+  height: 76%;
+}
+
+.mediaBars i:nth-child(3) {
+  height: 58%;
+}
+
+.mediaBars i:nth-child(4) {
+  height: 90%;
+}
+
+.searchBar {
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: rgba(248, 249, 250, 0.9);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.deliveryHomeHeader {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.deliveryLocation {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.deliveryLocation > div {
+  display: grid;
+  min-width: 0;
+  gap: 0.12rem;
+}
+
+.deliveryLocation span,
+.deliveryLocation strong {
+  display: block;
+}
+
+.deliveryLocation span {
+  line-height: 1;
+}
+
+.deliveryLocation strong {
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deliverySearch {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  border-radius: 1rem;
+  background: rgba(248, 249, 250, 0.94);
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.homeSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-top: 0.15rem;
+}
+
+.homeSectionHeader strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.dietaryTrigger,
+.filterAction {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 32px;
+  padding: 0.45rem 0.62rem;
+  border: 1px solid rgba(78, 205, 196, 0.35);
+  border-radius: 999px;
+  background: rgba(78, 205, 196, 0.13);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.dietaryTrigger:active,
+.filterAction:active {
+  transform: scale(0.97);
+}
+
+.restaurantList {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.restaurantCard {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: stretch;
+  min-width: 0;
+  padding: 0.55rem;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 18px rgba(26, 26, 46, 0.04);
+}
+
+.restaurantThumb {
+  width: 70px;
+  min-height: 70px;
+  border-radius: 0.82rem;
+  background:
+    radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.78), transparent 28%),
+    linear-gradient(145deg, rgba(255, 193, 122, 0.92), rgba(255, 130, 92, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.restaurantContent {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+}
+
+.restaurantContent strong {
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  line-height: 1.08;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurantContent > span {
+  overflow: hidden;
+  margin-top: 0.22rem;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurantMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem 0.5rem;
+  margin-top: 0.42rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.resultList {
+  display: grid;
+  gap: 0.7rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.previewCard strong,
+.dishCard strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.previewCard span,
+.dishCard span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.resultHeader strong {
+  display: block;
+  margin-top: 0.22rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.ghostBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.filterGrid,
+.filterRow {
+  margin-top: 0.1rem;
+}
+
+.filterChip,
+.filterChipActive {
+  padding: 0.65rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: rgba(248, 249, 250, 0.88);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  transition:
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.filterChipActive {
+  background: rgba(78, 205, 196, 0.18);
+  border-color: rgba(78, 205, 196, 0.3);
+  color: var(--text-primary);
+}
+
+.filterChip:active,
+.filterChipActive:active {
+  transform: scale(0.97);
+}
+
+.dishCard p {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+}
+
+.dishCardHeader {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.dishThumb {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.85), transparent 30%),
+    linear-gradient(160deg, rgba(255, 193, 122, 0.95), rgba(255, 130, 92, 0.95));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.dishTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.tagPill {
+  padding: 0.4rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(78, 205, 196, 0.12);
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.rolloutList {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.rolloutCard {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.15rem;
+}
+
+.rolloutCard span {
+  align-self: start;
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 249, 230, 0.95);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.reflectionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.learningGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 0.85fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+.reflectionCard {
+  padding: 1.4rem;
+}
+
+.reflectionCard p {
+  margin-top: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.learningCard {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 16px 36px rgba(26, 26, 46, 0.05);
+}
+
+.learningCard[data-tone='personal'] {
+  background: linear-gradient(180deg, rgba(255, 241, 245, 0.95), rgba(255, 255, 255, 0.82));
+}
+
+.learningCard[data-tone='dietary'] {
+  background: linear-gradient(180deg, rgba(241, 249, 246, 0.98), rgba(255, 255, 255, 0.82));
+}
+
+.learningCard[data-tone='neutral'] {
+  background: linear-gradient(180deg, rgba(255, 249, 230, 0.94), rgba(255, 255, 255, 0.82));
+}
+
+.learningCardFeatured {
+  grid-column: span 1;
+  padding: 1.7rem;
+}
+
+.learningKicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.learningCard h3 {
+  margin-top: 0.95rem;
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.learningCard p {
+  margin-top: 0.8rem;
+  max-width: 34ch;
+  color: var(--text-secondary);
+  line-height: 1.72;
+}
+
+@media (min-width: 1181px) and (max-height: 760px) {
+  .learningChapter .chapterInner {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .learningChapter .chapterTitle {
+    max-width: 14ch;
+    font-size: clamp(2.65rem, 4.2vw, 3.5rem);
+  }
+
+  .learningGrid {
+    gap: 1rem;
+    margin-top: 1.35rem;
+  }
+
+  .learningCard,
+  .learningCardFeatured {
+    padding: 1.25rem;
+  }
+
+  .learningCard h3 {
+    margin-top: 0.75rem;
+    font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  }
+
+  .learningCard p {
+    margin-top: 0.65rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 1024px) {
+  .problemGrid,
+  .personaGrid,
+  .metricsGrid,
+  .reflectionGrid,
+  .learningGrid,
+  .slideshowGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .slideshowSection {
+    height: auto;
+    padding: 5rem var(--space-xl);
+  }
+
+  .slideshowSticky {
+    position: static;
+    height: auto;
+  }
+
+  .slideshowVisual {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .slideshowSection {
+    height: auto;
+    padding: 5rem var(--space-xl);
+  }
+
+  .slideshowSticky {
+    position: static;
+    height: auto;
+  }
+
+  .slideshowGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .slideshowVisual {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapter,
+  .slideshowSection {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .chapter {
+    min-height: auto;
+  }
+
+  .chapterInner {
+    padding: 5rem 0;
+  }
+
+  .heroChapter .chapterInner {
+    padding-top: 6rem;
+  }
+
+  .heroTitle,
+  .chapterTitle {
+    max-width: none;
+  }
+
+  .heroMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .problemGrid,
+  .personaGrid,
+  .metricsGrid,
+  .reflectionGrid,
+  .learningGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .phoneScreen,
+  .mobileScreen {
+    min-height: 510px;
+  }
+}
+
+@media (max-width: 390px) {
+  .deliverySearch {
+    padding: 0.76rem 0.82rem;
+    font-size: 0.8rem;
+  }
+
+  .restaurantCard {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  .restaurantThumb {
+    width: 64px;
+    min-height: 64px;
+  }
+
+  .restaurantContent strong {
+    font-size: 0.9rem;
+  }
+
+  .restaurantMeta {
+    gap: 0.25rem 0.4rem;
+    font-size: 0.65rem;
+  }
+
+  .resultList {
+    max-height: 286px;
+  }
+}

@@ -1,37 +1,56 @@
-/**
- * App.jsx - Main Application Component
- * 
- * This is the root component that assembles all the major sections
- * of the portfolio website. The sections are rendered in order:
- * 1. Hero - Introduction and main CTA
- * 2. Experience - Work history with sticky card effect
- * 3. Skills - Product and technical skills showcase
- * 4. CaseStudies - Product case studies and analyses
- * 5. Contact - Contact information and social links
- * 
- * @author Devansh Srivastava
- */
+import { useEffect, useState } from 'react';
+import HomePage from './pages/HomePage';
+import FoodDeliveryCaseStudyPage from './pages/FoodDeliveryCaseStudyPage';
+import DatingAppCaseStudyPage from './pages/DatingAppCaseStudyPage';
+import { routes } from './lib/routes';
 
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import CaseStudies from './components/CaseStudies';
-import Contact from './components/Contact';
-
-/**
- * Main App Component
- * Renders all portfolio sections in a single-page scroll layout
- */
-function App() {
-  return (
-    <main>
-      <Hero />
-      <Experience />
-      <Skills />
-      <CaseStudies />
-      <Contact />
-    </main>
-  );
+function getRouteFromHash(hash) {
+  return hash || routes.home;
 }
 
-export default App
+function App() {
+  const [route, setRoute] = useState(() => getRouteFromHash(window.location.hash));
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setRoute(getRouteFromHash(window.location.hash));
+    };
+
+    if (!window.location.hash) {
+      window.history.replaceState(null, '', routes.home);
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [route]);
+
+  if (route === routes.foodDeliveryCaseStudy) {
+    return (
+      <FoodDeliveryCaseStudyPage
+        onBackHome={() => {
+          window.location.hash = routes.home;
+        }}
+      />
+    );
+  }
+
+  if (route === routes.datingAppCaseStudy) {
+    return (
+      <DatingAppCaseStudyPage
+        onBackHome={() => {
+          window.location.hash = routes.home;
+        }}
+      />
+    );
+  }
+
+  return <HomePage />;
+}
+
+export default App;

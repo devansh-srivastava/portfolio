@@ -32,57 +32,55 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: "Associate Engineer II",
+      role: "Business Analyst (Analyst II)",
       company: "Deloitte USI",
-      location: "Delhi, India",
-      period: "April 2025 - Present",
+      location: "Gurugram, India",
+      period: "Jan 2026 - Present",
       color: "#E8E5FF",
       accentColor: "#7C6AEF",
-      description: "Frontend development for a multi-state insurance enrollment portal.",
+      description: "Translate state-level regulatory filings into structured rules for document generation.",
       highlights: [
-        "Worked on frontend for an internal insurance enrollment portal across 17 U.S. states",
-        "Implemented and maintained state-specific enrollment forms by translating PDF forms into structured, validated UI flows",
-        "Contributed to unified search and workflow improvements, simplifying agent navigation across complex enrollment scenarios",
-        "Supported platform stability through Angular upgrades, security checks, documentation, and close coordination with QA, backend, and analysts"
+        "Gather state-specific regulatory inputs from U.S. stakeholders for 15+ regulated documents and translate policy language into document-generation rules",
+        "Manage concurrent state workstreams and prioritize delivery against competing regulatory filing deadlines",
+        "Own requirements from initial filing through version reviews and final regulatory approval",
+        "Diagnose QA-flagged rule-logic defects and implement corrections before regulatory submission"
       ],
-      skills: ["Angular", "TypeScript", "Figma", "JIRA", "Agile"],
-      impact: "17 U.S. States Impacted"
+      skills: ["Requirements Analysis", "Stakeholder Management", "Regulatory Compliance", "JIRA", "Confluence"],
+      impact: "15+ Documents"
     },
     {
       id: 2,
-      role: "Associate Software Engineer",
-      company: "Carelon Global Solutions",
-      location: "Delhi, India",
-      period: "Aug 2023 - Mar 2025",
-      color: "#E5F5F0",
-      accentColor: "#4ECDC4",
-      description: "Built core workflow features for an internal insurance enrollment platform.",
+      role: "Frontend Developer (Associate Engineer II)",
+      company: "Deloitte USI",
+      location: "Gurugram, India",
+      period: "Apr 2025 - Dec 2025",
+      color: "#E8E5FF",
+      accentColor: "#7C6AEF",
+      description: "Built compliant enrollment experiences and streamlined agent workflows for a multi-state insurance platform.",
       highlights: [
-        "Built core workflow features for an internal insurance enrollment platform",
-        "Built a Compare Feature for side-by-side enrollment validation, reducing manual review errors for agents",
-        "Worked on configurable UI modules and state-specific logic during open enrollment under tight deadlines",
-        "Improved code quality and reliability through vulnerability fixes, data sanitization, documentation, and cross-team coordination"
+        "Identified agents navigating four pages for one workflow; designed a unified comparison dashboard used by 10,000+ agents, saving about five minutes per enrollment session",
+        "Translated regulatory change requests into UI specifications, bridging policy and frontend to maintain compliance across active states",
+        "Introduced AI-assisted development practices that accelerated ticket turnaround"
       ],
-      skills: ["Angular", "TypeScript", "Jasmine", "Karma", "CSS"],
-      impact: "1.5+ Years Healthcare Tech"
+      skills: ["Angular", "TypeScript", "Figma", "JIRA", "Agile"],
+      impact: "10,000+ Agents"
     },
     {
       id: 3,
-      role: "Full-Stack Developer Intern",
-      company: "Little Leap",
-      location: "Remote",
-      period: "Jul 2021 - Dec 2021",
-      color: "#FFE5E5",
-      accentColor: "#FF6B9D",
-      description: "Contributed to internal tools and CRM platform development.",
+      role: "Associate Software Engineer",
+      company: "Carelon Global Solutions",
+      location: "Gurugram, India",
+      period: "Aug 2023 - Mar 2025",
+      color: "#E5F5F0",
+      accentColor: "#4ECDC4",
+      description: "Built agent-facing enrollment workflows for a complex, multi-state health-insurance platform.",
       highlights: [
-        "Contributed to internal tools and a CRM platform",
-        "Identified gaps in existing workflows and proposed feature-level improvements",
-        "Built and enhanced features for an internal CRM platform, including certificate generation and Excel-based data upload",
-        "Worked end-to-end on features, from idea discussion to implementation, in close collaboration with the team"
+        "Built agent-facing enrollment UI covering 40+ workflows across multiple U.S. states by converting paper insurance logic into digital experiences",
+        "Owned the feature lifecycle from requirement intake to production with analysts, QA, and backend teams",
+        "Supported open enrollment with zero P1 bugs"
       ],
-      skills: ["Laravel", "PHP", "MySQL", "AWS", "Bootstrap"],
-      impact: "First Tech Role"
+      skills: ["Angular", "TypeScript", "QA Collaboration", "Agile", "REST APIs"],
+      impact: "40+ Workflows"
     }
   ];
 

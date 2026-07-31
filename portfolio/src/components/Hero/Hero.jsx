@@ -102,7 +102,7 @@ const Hero = () => {
         <motion.div variants={tagVariants} className={styles.statusWrapper}>
           <div className={styles.statusTag}>
             <span className={styles.statusDot} />
-            <span>Open to PM Opportunities</span>
+            <span>Open to Product Management Opportunities</span>
             <Sparkles size={14} />
           </div>
         </motion.div>
@@ -121,9 +121,9 @@ const Hero = () => {
 
         {/* Subheading */}
         <motion.p variants={itemVariants} className={styles.subheading}>
-          Hey, I'm <span className={styles.name}>Devansh Srivastava</span> — a Frontend Developer 
-          with 2+ years of experience, now on a mission to build products that 
-          people actually love. Currently exploring AI agents and product thinking.
+          Hey, I'm <span className={styles.name}>Devansh Srivastava</span> - a Business Analyst with 3+ years of experience
+          across enterprise health insurance, frontend engineering, and product delivery. I translate complex requirements into
+          clear product experiences and build AI-powered tools from insight to launch.
         </motion.p>
 
         {/* Journey Tags */}
@@ -149,7 +149,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
           >
             <Lightbulb size={18} />
-            <span>Product Thinker</span>
+            <span>Business Analyst</span>
           </motion.div>
           <motion.div 
             className={styles.journeyArrow}
@@ -192,7 +192,7 @@ const Hero = () => {
         {/* Quick Stats */}
         <motion.div variants={itemVariants} className={styles.quickStats}>
           <div className={styles.stat}>
-            <span className={styles.statNumber}>2+</span>
+            <span className={styles.statNumber}>3+</span>
             <span className={styles.statLabel}>Years Experience</span>
           </div>
           <div className={styles.statDivider} />
