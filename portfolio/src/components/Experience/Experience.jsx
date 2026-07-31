@@ -41,7 +41,7 @@ const Experience = () => {
       description: "Translate state-level regulatory filings into structured rules for document generation.",
       highlights: [
         "Gather state-specific regulatory inputs from U.S. stakeholders for 15+ regulated documents and translate policy language into document-generation rules",
-        "Manage concurrent state workstreams and prioritize delivery against competing regulatory filing deadlines",
+        "Identified workflow inefficiencies and built an internal productivity tool, reducing template delivery time by approximately 15%.",
         "Own requirements from initial filing through version reviews and final regulatory approval",
         "Diagnose QA-flagged rule-logic defects and implement corrections before regulatory submission"
       ],
