@@ -35,15 +35,17 @@ const Skills = () => {
     {
       title: 'Technical',
       skills: [
-        'Angular',
-        'React Native',
+        'Agentic Architecture',
+        'Model Context Protocol (MCP)',
+        'Claude Code',
+        'Prompt Engineering',
+        'Context Management',
+        'AI Reliability',
         'TypeScript',
         'JavaScript',
-        'Firebase',
         'SQL',
         'REST APIs',
         'OpenAI Responses API',
-        'Figma',
       ],
     },
     {

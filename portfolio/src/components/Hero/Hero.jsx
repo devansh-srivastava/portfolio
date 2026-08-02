@@ -202,8 +202,8 @@ const Hero = () => {
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>
-            <span className={styles.statNumber}>15%</span>
-            <span className={styles.statLabel}>Faster Template Delivery</span>
+            <span className={styles.statNumber}>CCARF</span>
+            <span className={styles.statLabel}>Claude Certified Architect — Foundations</span>
           </div>
         </motion.div>
       </motion.div>
