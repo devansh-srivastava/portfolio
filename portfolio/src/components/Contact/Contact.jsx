@@ -116,25 +116,25 @@ const Contact = () => {
             <div className={styles.cardLeft}>
               <div className={styles.availabilityBadge}>
                 <span className={styles.pulsingDot} />
-                <span>Available for PM Roles</span>
+                <span>Available for Product & AI Roles</span>
               </div>
               
               <h3 className={styles.cardTitle}>Devansh Srivastava</h3>
-              <p className={styles.cardRole}>Frontend Developer → Product Manager</p>
+              <p className={styles.cardRole}>AI Product Manager &amp; Builder</p>
               
               <p className={styles.cardDescription}>
-                2+ years in frontend development, building products for healthcare 
-                and insurance. Currently exploring AI agents and product thinking.
+                I turn ambiguous customer problems into useful, reliable AI-powered
+                products—from discovery and workflows to polished experiences.
               </p>
 
               <motion.a 
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=devansh.srivastava2@gmail.com"
+                href="https://wa.me/919217796365?text=Hi"
                 className={styles.emailButton}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Mail size={18} />
-                <span>Drop me an email</span>
+                <span>Chat on WhatsApp</span>
                 <ArrowUpRight size={16} />
               </motion.a>
             </div>
