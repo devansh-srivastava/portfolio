@@ -128,7 +128,7 @@ const Contact = () => {
               </p>
 
               <motion.a 
-                href="https://wa.me/919217796365?text=Hi"
+                href="https://wa.me/917838006151?text=Hi"
                 className={styles.emailButton}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
