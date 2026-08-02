@@ -246,43 +246,6 @@
   color: var(--accent, var(--accent-purple));
 }
 
-/* Bottom CTA */
-.bottomCta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-  margin-top: var(--space-4xl);
-}
-
-.ctaText {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-}
-
-.ctaButton {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-xl);
-  background: var(--text-primary);
-  color: white;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid var(--text-primary);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-brutal);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.ctaButton:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--accent-purple);
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .grid {

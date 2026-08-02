@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
+import MeriFileStoryPage from './pages/MeriFileStoryPage';
 import FoodDeliveryCaseStudyPage from './pages/FoodDeliveryCaseStudyPage';
 import DatingAppCaseStudyPage from './pages/DatingAppCaseStudyPage';
 import { routes } from './lib/routes';
@@ -29,6 +30,16 @@ function App() {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   }, [route]);
+
+  if (route === routes.meriFileStory) {
+    return (
+      <MeriFileStoryPage
+        onBackHome={() => {
+          window.location.hash = routes.home;
+        }}
+      />
+    );
+  }
 
   if (route === routes.foodDeliveryCaseStudy) {
     return (

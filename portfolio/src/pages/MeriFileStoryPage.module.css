@@ -1,0 +1,270 @@
+.page {
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  background: #11120f;
+  color: #f4f4ec;
+}
+
+.header {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem clamp(1.5rem, 4vw, 4rem);
+  pointer-events: none;
+}
+
+.backButton,
+.title {
+  pointer-events: auto;
+}
+
+.backButton {
+  appearance: none;
+  border: 1px solid rgb(244 244 236 / 0.22);
+  border-radius: 999px;
+  background: rgb(17 18 15 / 0.72);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.7rem 0.95rem;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.backButton:hover {
+  border-color: rgb(244 244 236 / 0.5);
+  background: rgb(17 18 15 / 0.9);
+}
+
+.backButton:focus-visible {
+  outline: 2px solid #c4f63b;
+  outline-offset: 3px;
+}
+
+.backButton:active {
+  transform: scale(0.98);
+}
+
+.title {
+  margin: 0;
+  color: rgb(244 244 236 / 0.8);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.slideSection {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  height: 100dvh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  place-items: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+.ambient {
+  position: absolute;
+  z-index: -2;
+  inset: -5%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(52px) saturate(0.75) brightness(0.25);
+  opacity: 0.62;
+  transform: scale(1.08);
+}
+
+.slideSection::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  background: rgb(17 18 15 / 0.7);
+}
+
+.sceneStage {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  width: 100%;
+  height: 100dvh;
+  pointer-events: auto;
+  filter: drop-shadow(0 26px 64px rgb(0 0 0 / 0.38));
+  place-items: center;
+  will-change: opacity, transform;
+}
+
+.slideCount {
+  position: absolute;
+  z-index: 1;
+  right: clamp(1.5rem, 4vw, 4rem);
+  bottom: 1.5rem;
+  margin: 0;
+  color: rgb(244 244 236 / 0.62);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+.drawerLayer {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawerBackdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgb(0 0 0 / 0.58);
+  cursor: pointer;
+}
+
+.researchDrawer {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(56vw, 900px);
+  min-width: 36rem;
+  height: 100dvh;
+  border-left: 1px solid rgb(197 246 59 / 0.3);
+  background: #10140f;
+  box-shadow: -28px 0 72px rgb(0 0 0 / 0.38);
+  animation: drawer-enter 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  border-bottom: 1px solid rgb(244 244 236 / 0.14);
+}
+
+.drawerHeader p,
+.drawerHeader h2 {
+  margin: 0;
+}
+
+.drawerHeader p {
+  color: #c5f63b;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.drawerHeader h2 {
+  margin-top: 0.22rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.04em;
+}
+
+.drawerClose,
+.openSource {
+  border: 1px solid rgb(244 244 236 / 0.24);
+  border-radius: 999px;
+  background: transparent;
+  color: #f4f4ec;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.65rem 0.85rem;
+}
+
+.drawerClose {
+  cursor: pointer;
+}
+
+.drawerClose:hover,
+.openSource:hover {
+  border-color: #c5f63b;
+  background: rgb(197 246 59 / 0.1);
+}
+
+.drawerClose:focus-visible,
+.openSource:focus-visible {
+  outline: 2px solid #c5f63b;
+  outline-offset: 3px;
+}
+
+.researchEmbed {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  background: #fff;
+}
+
+.openSource {
+  justify-self: start;
+  margin: 1rem 1.5rem;
+  text-decoration: none;
+}
+
+@keyframes drawer-enter {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 1rem 1.15rem;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .slideSection {
+    padding: 0;
+  }
+
+  .slideCount {
+    right: 1.15rem;
+    bottom: 1.15rem;
+  }
+
+  .researchDrawer {
+    width: min(100%, 42rem);
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    scroll-behavior: auto;
+  }
+
+  .backButton {
+    transition: none;
+  }
+
+  .sceneStage {
+    will-change: auto;
+  }
+
+  .researchDrawer {
+    animation: none;
+  }
+}

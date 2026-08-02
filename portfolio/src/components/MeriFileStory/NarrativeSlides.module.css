@@ -1,0 +1,183 @@
+.canvas {
+  --canvas-black: #070b0a;
+  --canvas-deep-green: #0d1f1e;
+  --canvas-text: #f7f8f4;
+  --canvas-muted: #d7ddd5;
+  --canvas-lime: #87d900;
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 177.777dvh);
+  height: min(100dvh, 56.25vw);
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--canvas-deep-green);
+  color: var(--canvas-text);
+}
+
+.atmosphere,
+.atmosphereGlow,
+.messageField {
+  position: absolute;
+  inset: 0;
+}
+
+.atmosphere {
+  z-index: -2;
+  overflow: hidden;
+  background:
+    linear-gradient(115deg, rgb(1 10 10 / 0.68), rgb(5 18 17 / 0.25) 51%, rgb(0 5 5 / 0.76)),
+    radial-gradient(circle at 52% 40%, #213b37 0%, #102321 34%, #06100f 100%);
+}
+
+.atmosphere::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(4 10 10 / 0.14), rgb(4 10 10 / 0.72));
+  content: '';
+}
+
+.atmosphereGlow {
+  z-index: 1;
+  background:
+    radial-gradient(circle at 28% 24%, rgb(159 225 195 / 0.1), transparent 24%),
+    radial-gradient(circle at 70% 58%, rgb(75 160 132 / 0.08), transparent 30%);
+  filter: blur(18px);
+}
+
+.messageField {
+  z-index: 0;
+  transform: scale(1.08) rotate(-2deg);
+  filter: blur(8px);
+  opacity: 0.58;
+}
+
+.messageCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: clamp(5px, 0.65vw, 11px);
+  width: clamp(124px, 15.2vw, 248px);
+  min-height: clamp(30px, 3.2vw, 54px);
+  padding: clamp(7px, 0.7vw, 12px) clamp(10px, 1vw, 18px);
+  border: 1px solid rgb(161 199 187 / 0.2);
+  border-radius: clamp(7px, 0.65vw, 12px);
+  background: rgb(20 48 44 / 0.58);
+  box-shadow: 0 16px 42px rgb(0 0 0 / 0.18);
+  color: rgb(220 237 229 / 0.58);
+  font-size: clamp(7px, 0.72vw, 12px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.documentMark {
+  width: clamp(11px, 1.1vw, 18px);
+  height: clamp(13px, 1.35vw, 22px);
+  flex: 0 0 auto;
+  border: 1px solid rgb(227 241 234 / 0.75);
+  border-radius: 2px;
+  background:
+    linear-gradient(135deg, transparent 44%, rgb(227 241 234 / 0.72) 45% 51%, transparent 52%) top right / 45% 45% no-repeat,
+    linear-gradient(rgb(227 241 234 / 0.62), rgb(227 241 234 / 0.62)) 28% 67% / 45% 1px no-repeat,
+    linear-gradient(rgb(227 241 234 / 0.62), rgb(227 241 234 / 0.62)) 28% 80% / 35% 1px no-repeat;
+}
+
+.one { top: 4%; left: 8%; }
+.two { top: 12%; left: 35%; }
+.three { top: 8%; right: 9%; }
+.four { top: 38%; left: 0%; }
+.five { top: 37%; right: 7%; }
+.six { bottom: 8%; left: 12%; }
+.seven { bottom: 5%; left: 42%; }
+.eight { bottom: 15%; right: 4%; }
+
+.panel {
+  position: absolute;
+  inset: 22.2% 5.55%;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: clamp(24px, 4vw, 76px);
+  border: 1px solid rgb(226 240 231 / 0.08);
+  border-radius: clamp(24px, 2.5vw, 52px);
+  background: linear-gradient(135deg, rgb(3 8 8 / 0.92), rgb(5 10 10 / 0.86));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.04),
+    0 26px 80px rgb(0 0 0 / 0.24);
+  text-align: center;
+}
+
+.heading,
+.question,
+.supportingLine,
+.limeLine {
+  margin: 0;
+  font-family: inherit;
+  letter-spacing: -0.055em;
+}
+
+.heading,
+.question {
+  max-width: 14ch;
+  font-size: clamp(24px, 4.05vw, 74px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.heading span,
+.question span {
+  display: block;
+}
+
+.supportingLine {
+  margin-top: clamp(8px, 1.2vw, 22px);
+  color: var(--canvas-muted);
+  font-size: clamp(17px, 2.85vw, 52px);
+  font-weight: 750;
+  line-height: 1.05;
+}
+
+.limeLine {
+  margin-top: clamp(8px, 1.25vw, 24px);
+  color: var(--canvas-lime);
+  font-size: clamp(24px, 4.25vw, 78px);
+  font-weight: 850;
+  line-height: 1;
+}
+
+.slideSix .panel {
+  inset-block: 22.2%;
+}
+
+.question {
+  max-width: 17.5ch;
+  font-size: clamp(25px, 4vw, 72px);
+}
+
+.question strong {
+  color: var(--canvas-lime);
+  font: inherit;
+}
+
+@media (max-width: 700px) {
+  .panel {
+    inset: 17% 4.5%;
+    padding-inline: 5.5%;
+  }
+
+  .messageField {
+    transform: scale(1.22) rotate(-2deg);
+  }
+
+  .slideSix .panel {
+    inset-block: 18%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas,
+  .panel {
+    transform: none !important;
+  }
+}

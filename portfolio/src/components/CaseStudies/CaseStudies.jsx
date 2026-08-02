@@ -42,7 +42,8 @@ const CaseStudies = () => {
       accentColor: "#2E86AB",
       description: "A WhatsApp AI bot for saving, organizing, querying, and retrieving personal documents - built end to end and later pivoted toward group use.",
       role: "Product Manager & Builder",
-      url: "https://devansh-srivastava.github.io/Merifile-Website/",
+      url: routes.meriFileStory,
+      isInternal: true,
       metrics: [
         { label: "Discovery", value: "12+ Interviews" },
         { label: "Stack", value: "OpenAI Responses API" },
